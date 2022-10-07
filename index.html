@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <title>Find number</title>
+    <style>
+        .refresh-block {
+            display: block !important;
+            white-space: nowrap;
+        }
+
+        .winner {
+            background-color: rgb(141, 224, 16);
+            animation: shadow-pop-tr 0.3s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+        }
+
+        @keyframes shadow-pop-tr {
+            0% {
+                box-shadow: 0 0 #0f9216, 0 0 #0f9216, 0 0 #0f9216, 0 0 #0f9216, 0 0 #0f9216, 0 0 #0f9216, 0 0 #0f9216, 0 0 #0f9216;
+                transform: translateX(0) translateY(0);
+            }
+
+            100% {
+                box-shadow: 1px -1px #0f9216, 2px -2px #0f9216, 3px -3px #0f9216, 4px -4px #0f9216, 5px -5px #0f9216, 6px -6px #0f9216, 7px -7px #0f9216, 8px -8px #0f9216;
+                transform: translateX(-8px) translateY(8px);
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2 class="text-primary text-center mt-5 mb-4">Random raqamni toping</h2>
+        <form class="find-form" method="post">
+            <div class="d-flex align-items-center w-50 mx-auto mb-3">
+                <input class="find-input form-control me-3" type="number" placeholder="Tahminiy raqam kiriting" required>
+                <button class="find-btn btn btn-primary">Find</button>
+                <button class="refresh-btn d-none btn btn-success ms-3">New Game</button>
+            </div>
+        </form>
+        <div class="count alert alert-primary w-50 mx-auto"></div>
+        <div class="number-result alert w-50 mx-auto"></div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
